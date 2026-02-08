@@ -1,0 +1,733 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Strategic Course Selection for Network Engineering Excellence in 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --accent: #f59e0b;
+            --neutral: #374151;
+            --base-100: #ffffff;
+            --base-200: #f8fafc;
+            --base-300: #e2e8f0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--neutral);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            overflow-x: hidden;
+        }
+        
+        .serif-headline {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            width: 280px;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--base-300);
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .main-content {
+            margin-left: 320px;
+            max-width: 900px;
+            padding: 2rem;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-text {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-visual {
+            position: relative;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .visual-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+            z-index: 5;
+        }
+        
+        .citation-link {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 0.25rem;
+            transition: all 0.2s;
+        }
+        
+        .citation-link:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+        
+        .comparison-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary);
+            margin-bottom: 2rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 1200px) {
+            .toc-fixed {
+                display: none;
+            }
+            .main-content {
+                margin-left: 0;
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .main-content {
+                padding: 1rem;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .hero-text .text-2xl {
+                font-size: 1.125rem;
+            }
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        
+        .metric-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+        }
+        
+        .metric-badge.secondary {
+            background: #6366f1;
+        }
+        
+        .metric-badge.accent {
+            background: #f59e0b;
+        }
+    </style>
+  <base target="_blank">
+</head>
+
+  <body>
+    <!-- Fixed Table of Contents -->
+    <div class="toc-fixed">
+      <div class="p-6">
+        <h3 class="serif-headline text-lg mb-4">Contents</h3>
+        <nav class="space-y-2">
+          <a href="#executive-summary" class="block text-sm hover:text-blue-600 transition-colors">Executive Summary</a>
+          <a href="#student-profile" class="block text-sm hover:text-blue-600 transition-colors">Student Profile &amp; Context</a>
+          <a href="#evaluation-framework" class="block text-sm hover:text-blue-600 transition-colors">Evaluation Framework</a>
+          <a href="#cisco-course" class="block text-sm hover:text-blue-600 transition-colors">Course A: Cisco Networking</a>
+          <a href="#ai-course" class="block text-sm hover:text-blue-600 transition-colors">Course B: N8N AI Agents</a>
+          <a href="#comparative-analysis" class="block text-sm hover:text-blue-600 transition-colors">Comparative Analysis</a>
+          <a href="#recommendation" class="block text-sm hover:text-blue-600 transition-colors">Strategic Recommendation</a>
+          <a href="#implementation" class="block text-sm hover:text-blue-600 transition-colors">Implementation Plan</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-grid mb-12">
+        <div class="hero-text">
+          <h1 class="serif-headline text-5xl mb-4 leading-tight">
+            <span class="italic text-gray-600">Network Engineering Excellence</span>
+            <br/>
+            Strategic Course Selection for 2026
+          </h1>
+          <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+            A comprehensive analysis comparing two leading Udemy courses for maximum career impact
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <div class="metric-badge">
+              <i class="fas fa-users mr-2"></i>
+              230K+ Total Students
+            </div>
+            <div class="metric-badge secondary">
+              <i class="fas fa-star mr-2"></i>
+              4.7/5 Avg Rating
+            </div>
+            <div class="metric-badge accent">
+              <i class="fas fa-certificate mr-2"></i>
+              CCNA-Aligned
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-overlay"></div>
+          <img src="https://kimi-web-img.moonshot.cn/img/www.researchgate.net/64455a0daffa77a9394d99b1bbca6bd21c5dea7a.png" alt="Abstract network infrastructure visualization" class="w-full h-full object-cover opacity-80" size="large" aspect="wide" color="blue" query="abstract network infrastructure" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+          <div class="absolute inset-0 flex items-center justify-center z-20">
+            <div class="text-center text-white">
+              <i class="fas fa-network-wired text-6xl mb-4"></i>
+              <p class="text-lg font-semibold">Network Engineering 2026</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section id="executive-summary" class="mb-16">
+        <div class="highlight-box">
+          <h2 class="serif-headline text-2xl mb-4 flex items-center">
+            <i class="fas fa-bullseye mr-3 text-amber-600"></i>
+            Executive Summary
+          </h2>
+          <p class="text-lg font-semibold mb-3">
+            For a network engineering student seeking maximum CV value in 2026, <strong>Cyber Quince&#39;s &#34;Practical Cisco Networking Labs in Cisco Packet Tracer&#34; is the clear winner.</strong>
+          </p>
+          <p class="mb-3">
+            It offers direct alignment with job requirements, a recognized certification pathway (CCNA), and employer-validated skills. The Anton Voroniuk N8N course, while valuable for AI automation broadly, requires substantial translation to demonstrate relevance for network engineering roles and lacks industry-recognized credentialing.
+          </p>
+        </div>
+      </section>
+
+      <!-- Student Profile &amp; Context -->
+      <section id="student-profile" class="mb-12">
+        <h2 class="serif-headline text-3xl mb-8">Student Profile and Career Context</h2>
+
+        <div class="comparison-card">
+          <h3 class="text-xl font-semibold mb-4 text-blue-700">Network Engineering Student Seeking Comprehensive Knowledge</h3>
+          <p class="mb-4">
+            The contemporary network engineering student operates within a rapidly evolving technological landscape where foundational networking expertise must coexist with emerging competencies in artificial intelligence, automation, and cloud infrastructure. <a href="https://www.networkershome.com/network-engineer-roadmap-2026" class="citation-link" target="_blank">Source</a>
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 mt-6">
+            <div>
+              <h4 class="font-semibold mb-2">Market Realities in 2026</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>70% of enterprise job postings prioritize CCNA holders</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>30% of SMEs make CCNA a mandatory requirement</li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>AI screening systems specifically seek Cisco keywords</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Student Objectives</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start"><i class="fas fa-target text-blue-500 mr-2 mt-1"></i>Knowledge for comprehensive understanding</li>
+                <li class="flex items-start"><i class="fas fa-target text-blue-500 mr-2 mt-1"></i>Credentials for signaling to employers</li>
+                <li class="flex items-start"><i class="fas fa-target text-blue-500 mr-2 mt-1"></i>Practical skills for immediate deployment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Evaluation Framework -->
+      <section id="evaluation-framework" class="mb-12">
+        <h2 class="serif-headline text-3xl mb-8">Evaluation Framework</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="comparison-card">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-industry mr-3 text-blue-600"></i>
+              Industry Relevance &amp; Demand
+            </h3>
+            <p class="text-sm mb-3">Analysis of job posting data, certification trends, and employer feedback regarding valued competencies.</p>
+            <div class="bg-blue-50 p-3 rounded-lg">
+              <p class="text-sm"><strong>Key Metric:</strong> CCNA recognition appears in 35-40% of entry-level network engineering postings <a href="https://www.leads4pass.com/blogs/2026-network-revolution-the-top-5-cisco-certifications-worth-investing-in.html" class="citation-link" target="_blank">Source</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="comparison-card">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-certificate mr-3 text-green-600"></i>
+              Certification Pathway Alignment
+            </h3>
+            <p class="text-sm mb-3">Assessment of direct support for industry-recognized credentialing pathways.</p>
+            <div class="bg-green-50 p-3 rounded-lg">
+              <p class="text-sm"><strong>Structure:</strong> CCNA → CCNP → CCIE with specialized automation tracks <a href="https://blogs.cisco.com/learning/par-merat-announces-learn-with-cisco" class="citation-link" target="_blank">Source</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <h3 class="text-lg font-semibold mb-4">Course Credibility Metrics</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b-2">
+                  <th class="text-left py-2">Metric</th>
+                  <th class="text-center py-2">Cyber Quince</th>
+                  <th class="text-center py-2">Anton Voroniuk</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="py-2 font-medium">Enrollment</td>
+                  <td class="py-2 text-center"><span class="metric-badge">210,919+</span></td>
+                  <td class="py-2 text-center">20,115+</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-2 font-medium">Rating</td>
+                  <td class="py-2 text-center"><span class="metric-badge secondary">4.8/5</span></td>
+                  <td class="py-2 text-center">4.5/5</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-2 font-medium">Instructor Focus</td>
+                  <td class="py-2 text-center"><span class="metric-badge accent">Specialized</span></td>
+                  <td class="py-2 text-center">Broad Portfolio</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-gray-600 mt-3">Sources: <a href="https://www.udemy.com/course/practical-cisco-networking-labs/" class="citation-link" target="_blank">Cyber Quince Stats</a>, <a href="https://www.udemy.com/course/n8n-ai-agent-creation-guide/" class="citation-link" target="_blank">Voroniuk Stats</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Cisco Course Analysis -->
+      <section id="cisco-course" class="mb-12">
+        <h2 class="serif-headline text-3xl mb-8">Course A: Practical Cisco Networking Labs</h2>
+
+        <div class="comparison-card">
+          <h3 class="text-xl font-semibold mb-4 text-blue-700">Cyber Quince Profile &amp; Metrics</h3>
+
+          <div class="grid md:grid-cols-3 gap-4 mb-6">
+            <div class="text-center bg-blue-50 p-4 rounded-lg">
+              <div class="text-2xl font-bold text-blue-600">210,919+</div>
+              <div class="text-sm text-gray-600">Students Enrolled</div>
+            </div>
+            <div class="text-center bg-green-50 p-4 rounded-lg">
+              <div class="text-2xl font-bold text-green-600">4.8/5</div>
+              <div class="text-sm text-gray-600">Rating (2,754+ reviews)</div>
+            </div>
+            <div class="text-center bg-amber-50 p-4 rounded-lg">
+              <div class="text-2xl font-bold text-amber-600">1.3%</div>
+              <div class="text-sm text-gray-600">Review Rate</div>
+            </div>
+          </div>
+
+          <h4 class="font-semibold mb-3">Technical Skills Coverage</h4>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h5 class="font-medium mb-2">Core Protocols</h5>
+              <ul class="text-sm space-y-1">
+                <li>• VLANs, STP, VTP</li>
+                <li>• OSPF, EIGRP, BGP</li>
+                <li>• NAT, PAT implementation</li>
+                <li>• Cisco IOS fundamentals</li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="font-medium mb-2">Practical Application</h5>
+              <ul class="text-sm space-y-1">
+                <li>• Cisco Packet Tracer labs</li>
+                <li>• Troubleshooting scenarios</li>
+                <li>• Network design principles</li>
+                <li>• Security integration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-card">
+          <h3 class="text-xl font-semibold mb-4 text-green-700">Career &amp; Certification Alignment</h3>
+
+          <div class="bg-green-50 p-4 rounded-lg mb-4">
+            <h4 class="font-semibold mb-2">Direct CCNA 200-301 Exam Preparation</h4>
+            <p class="text-sm">Aligned with all six CCNA exam domains: Network Fundamentals (20%), Network Access (20%), IP Connectivity (25%), IP Services (10%), Security Fundamentals (15%), and Automation &amp; Programmability (10%)</p>
+            <a href="https://www.rededucation.com/your-first-step-in-it-the-ultimate-guide-to-passing-the-ccna-in-2026/" class="citation-link" target="_blank">Source</a>
+          </div>
+
+          <div class="bg-blue-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2">Industry Recognition Factors</h4>
+            <ul class="text-sm space-y-1">
+              <li>• Cisco Packet Tracer listed among top skills for CCNA network engineers</li>
+              <li>• Resume guides explicitly recommend Cisco IOS and Packet Tracer proficiency</li>
+              <li>• AI-powered screening systems flag these keywords favorably</li>
+            </ul>
+            <a href="https://www.beamjobs.com/resumes/ccna-network-engineer-resume-examples" class="citation-link" target="_blank">Source</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Course Analysis -->
+      <section id="ai-course" class="mb-12">
+        <h2 class="serif-headline text-3xl mb-8">Course B: N8N AI Agent Creation Guide</h2>
+
+        <div class="comparison-card">
+          <h3 class="text-xl font-semibold mb-4 text-purple-700">Anton Voroniuk Profile &amp; Metrics</h3>
+
+          <div class="grid md:grid-cols-3 gap-4 mb-6">
+            <div class="text-center bg-purple-50 p-4 rounded-lg">
+              <div class="text-2xl font-bold text-purple-600">20,115+</div>
+              <div class="text-sm text-gray-600">Students Enrolled</div>
+            </div>
+            <div class="text-center bg-indigo-50 p-4 rounded-lg">
+              <div class="text-2xl font-bold text-indigo-600">4.5/5</div>
+              <div class="text-sm text-gray-600">Rating (407 reviews)</div>
+            </div>
+            <div class="text-center bg-pink-50 p-4 rounded-lg">
+              <div class="text-2xl font-bold text-pink-600">900K+</div>
+              <div class="text-sm text-gray-600">Total Students</div>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+            <h4 class="font-semibold mb-2 flex items-center">
+              <i class="fas fa-exclamation-triangle mr-2 text-yellow-600"></i>
+              Limited Direct Networking Relevance
+            </h4>
+            <p class="text-sm">Primary focus on general business automation rather than network-specific applications</p>
+          </div>
+
+          <h4 class="font-semibold mb-3">Technical Skills Coverage</h4>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h5 class="font-medium mb-2">AI &amp; Automation</h5>
+              <ul class="text-sm space-y-1">
+                <li>• N8N workflow automation</li>
+                <li>• Prompt engineering</li>
+                <li>• LLM integration (GPT-4, Claude)</li>
+                <li>• Code Nodes for complex logic</li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="font-medium mb-2">Business Integration</h5>
+              <ul class="text-sm space-y-1">
+                <li>• Gmail &amp; Google Calendar</li>
+                <li>• API connections</li>
+                <li>• Marketing automation</li>
+                <li>• Customer support bots</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-card">
+          <h3 class="text-xl font-semibold mb-4 text-orange-700">Industry Context for AI Skills</h3>
+
+          <div class="bg-orange-50 p-4 rounded-lg mb-4">
+            <h4 class="font-semibold mb-2">Cisco&#39;s 2026 Direction</h4>
+            <p class="text-sm mb-2">Cisco&#39;s AI Infrastructure Specialist certification addresses &#34;AI data pipelines,&#34; &#34;RoCEv2,&#34; &#34;GPUDirect,&#34; and central management platforms rather than general agent creation.</p>
+            <a href="https://davidbombal.com/network-engineers-you-need-this-new-ai-skill-set/" class="citation-link" target="_blank">Source</a>
+          </div>
+
+          <div class="bg-red-50 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2">Critical Gap Analysis</h4>
+            <p class="text-sm">Substantial gap between general AI agent creation and network-specific AI applications. Network applications employ specialized architectures, data models, and integration patterns distinct from general business automation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparative Analysis -->
+      <section id="comparative-analysis" class="mb-12">
+        <h2 class="serif-headline text-3xl mb-8">Comparative Assessment for Network Engineering CV Value</h2>
+
+        <div class="chart-container">
+          <h3 class="text-lg font-semibold mb-6">Direct Relevance to Network Engineering Roles</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-green-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-green-800 mb-2">Cyber Quince Advantage</h4>
+              <ul class="text-sm space-y-1">
+                <li>✓ Explicit keyword match with 70%+ job postings</li>
+                <li>✓ Direct CCNA certification pathway alignment</li>
+                <li>✓ ATS-optimized technical vocabulary</li>
+                <li>✓ Portfolio-ready lab artifacts</li>
+              </ul>
+            </div>
+            <div class="bg-yellow-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-yellow-800 mb-2">N8N Limitations</h4>
+              <ul class="text-sm space-y-1">
+                <li>✗ Indirect relevance requiring skill translation</li>
+                <li>✗ No recognized certification pathway</li>
+                <li>✗ Limited network-specific applications</li>
+                <li>✗ Requires additional project work for relevance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-card">
+          <h3 class="text-xl font-semibold mb-4">Employer Perception &amp; Credential Weight</h3>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-green-600 mb-2">75%</div>
+              <div class="text-sm font-medium">HR Managers Value CCNA</div>
+              <div class="text-xs text-gray-600">Over general certificates</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-blue-600 mb-2">10:1</div>
+              <div class="text-sm font-medium">Enrollment Advantage</div>
+              <div class="text-xs text-gray-600">Cyber Quince vs N8N</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-purple-600 mb-2">+30%</div>
+              <div class="text-sm font-medium">CCNA Salary Premium</div>
+              <div class="text-xs text-gray-600">Average salary increase</div>
+            </div>
+          </div>
+          <p class="text-xs text-gray-600 mt-4 text-center">
+            Sources: <a href="https://cciedump.spoto.net/newblog/ten-core-reasons-you-must-take-the-ccna-exam-in-2026.html" class="citation-link" target="_blank">Salary Data</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Strategic Recommendation -->
+      <section id="recommendation" class="mb-12">
+        <h2 class="serif-headline text-3xl mb-8">Strategic Recommendation</h2>
+
+        <div class="highlight-box">
+          <h3 class="serif-headline text-xl mb-4 flex items-center">
+            <i class="fas fa-trophy mr-3 text-amber-600"></i>
+            Primary Recommendation: Cyber Quince Course
+          </h3>
+          <p class="text-lg font-semibold mb-4">
+            Based on comprehensive evaluation across all established criteria, <strong>Cyber Quince&#39;s &#34;Practical Cisco Networking Labs in Cisco Packet Tracer&#34; offers substantially higher CV value for 2026 network engineering entry.</strong>
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-4 mt-6">
+            <div class="bg-white p-4 rounded-lg shadow">
+              <h4 class="font-semibold mb-2 text-blue-700">Direct Skill-to-Job Mapping</h4>
+              <p class="text-sm">Eliminates interpretive burden with explicit keyword alignment</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+              <h4 class="font-semibold mb-2 text-green-700">Certification Pathway</h4>
+              <p class="text-sm">Progressive value accumulation toward recognized credentials</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+              <h4 class="font-semibold mb-2 text-purple-700">Employer Recognition</h4>
+              <p class="text-sm">Cisco-aligned credentials with established hiring manager conditioning</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-card">
+          <h3 class="text-xl font-semibold mb-4">Future-Proofing Analysis</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <i class="fas fa-shield-alt text-green-500 mr-3 mt-1"></i>
+              <div>
+                <h4 class="font-semibold">Foundational Knowledge Durability</h4>
+                <p class="text-sm">TCP/IP, routing protocols, and switching architectures remain essential despite AI advancement</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-layer-group text-blue-500 mr-3 mt-1"></i>
+              <div>
+                <h4 class="font-semibold">Optimal Layering Strategy</h4>
+                <p class="text-sm">Core networking expertise with subsequent AI layer addition provides maximum career resilience</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-robot text-purple-500 mr-3 mt-1"></i>
+              <div>
+                <h4 class="font-semibold">AI Displacement Reality</h4>
+                <p class="text-sm">Automation targets routine tasks, not strategic network design and troubleshooting</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Implementation Plan -->
+      <section id="implementation" class="mb-12">
+        <h2 class="serif-headline text-3xl mb-8">Implementation Plan</h2>
+
+        <div class="chart-container">
+          <h3 class="text-lg font-semibold mb-6">Recommended Career Progression Timeline</h3>
+          <div class="space-y-6">
+            <div class="flex items-center">
+              <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                <span class="text-green-600 font-bold">0-3M</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold">Foundation Phase</h4>
+                <p class="text-sm">Complete Cyber Quince course + CCNA exam preparation → <strong>CCNA Certification</strong></p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                <span class="text-blue-600 font-bold">3-6M</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold">Automation Layer</h4>
+                <p class="text-sm">Cisco CCNA Automation (DevNet) → <strong>Automation Certification</strong></p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                <span class="text-purple-600 font-bold">6-12M</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold">AI Integration</h4>
+                <p class="text-sm">Cisco AI Infrastructure Specialist → <strong>AI Networking Credential</strong></p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                <span class="text-amber-600 font-bold">12-24M</span>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-semibold">Specialization</h4>
+                <p class="text-sm">CCNP Enterprise/Security → <strong>Professional Certification</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-card">
+          <h3 class="text-xl font-semibold mb-4">CV Presentation Strategy</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold mb-3">Technical Skills Optimization</h4>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <p class="text-sm font-mono">
+                  <strong>Technical Skills</strong>
+                  <br/>
+                  • Network Simulation: Cisco Packet Tracer (advanced topology design)
+                  <br/>
+                  • Routing Protocols: OSPF (multi-area), BGP fundamentals
+                  <br/>
+                  • Switching: VLANs, STP/RSTP, VTP, EtherChannel
+                  <br/>
+                  • Security: ACLs, firewall configuration, VPN fundamentals
+                </p>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-3">Achievement Quantification</h4>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <p class="text-sm">
+                  <strong>Professional Development</strong>
+                  <br/>
+                  • Designed 15+ enterprise topologies
+                  <br/>
+                  • Configured 50+ device scenarios
+                  <br/>
+                  • Resolved 100+ troubleshooting cases
+                  <br/>
+                  • Deployed VLAN segmentation with ACL policies
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final Summary -->
+      <section class="mb-12">
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-xl">
+          <h2 class="serif-headline text-2xl mb-4">Final Determination</h2>
+          <p class="text-lg mb-4">
+            For the network engineering student prioritizing <strong>maximum CV value in the 2026 job market</strong>, the <strong>Cyber Quince &#34;Practical Cisco Networking Labs in Cisco Packet Tracer&#34; is the strategically optimal selection.</strong>
+          </p>
+          <p class="text-sm opacity-90">
+            The path to comprehensive knowledge: establish networking fundamentals through Cyber Quince and CCNA achievement, then layer network-specific AI and automation capabilities through Cisco DevNet and targeted AIOps training.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll spy for TOC
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('.toc-fixed a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('text-blue-600', 'font-semibold');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-blue-600', 'font-semibold');
+                }
+            });
+        });
+    </script>
+  
+
+</body></html>
