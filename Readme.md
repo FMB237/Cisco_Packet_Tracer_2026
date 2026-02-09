@@ -62,10 +62,10 @@ Access mode in VLAN means the Vlan will only set up allow data to pass the end-d
 
 ---
 # Lesson 3 : Router-on-sticks
-**This is a method that permit to connect togther many Vlans in differcent sub-networks together so that the can share data between them ***
+**This is a method that permit to connect togther many Vlans in differcent sub-networks together so that the can share data between them**
 The principle of the Router on a stick is mainly from the concept of using a single Router to connect mainly Sub-networks where this sub-networks can be consider as Vlans 
 So for this lab we will add a single Router and 4 swithes which we will create 2 Vlans mainly VLAN 100 and VLAN 200 which will have differecnt subnet address that is 192.168.1.0 for Vlan 100 and 192.168.2.0 to VLAN 200 then attach some pcs to this switch and activate the trunk to allow pass the Vlans through the switches and access to the pcs.
-Note:The Trunks we are using are base the 802.1Q encapsulations***
+**Note:The Trunks we are using are base the 802.1Q encapsulations**
 For the rest it will seen in the lab topology and also for this lab DHCP server will configurate for each VLANs
 This is type of Lab always make show that all the switches has a Vlan attach to it
 From this lab i mainly learn one thing always check weather the interface trunks are been correctly configurated like you want or you will always face errors when setting up DHCP and the packet will not have a route to travel in.
