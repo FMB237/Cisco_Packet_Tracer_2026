@@ -47,10 +47,10 @@ Let give the address 10.0.0.10 to our client pc which is mainly connnected to ou
 Package can also send using package options from the GUI which stimulate the ping
 ---
 # Lesson 2 :VLANs
-** What are VLANs ** 
+**What are VLANs** 
 VLANs means Virtual Local are  network On like simple LAN VLANs mainly functions the same so these are mainly virtual network found inside real networks that permit to segment a global network into smaller part and it which commnicate together but does not access to the same services in the global network so VLANs are small virtual networks inside the Big network
-** VLANs are generally used in department of industries so we can have a Vlan for the management with ID 100 and another VLAN for the employeers with id 200 **
-** Let discuss about the notion of VLAN Trunks,access and Portsecurity ** 
+**VLANs are generally used in department of industries so we can have a Vlan for the management with ID 100 and another VLAN for the employeers with id 200**
+**Let discuss about the notion of VLAN Trunks,access and Portsecurity** 
 
 Since Vlan are small virtaul networks the mainly add more security to our networks and more control access to our devices.
 So we gonna see to create Vlan  and add security to it also note the concept of using in access mode and trunk mode
@@ -86,3 +86,5 @@ So STP is made to choose the faster path so if we have a far optics fiber cable,
 When the is communication between this ports one port will be blocked and the other will choosen to be root port.
 
 
+
+I like continous after
