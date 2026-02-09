@@ -56,5 +56,33 @@ Since Vlan are small virtaul networks the mainly add more security to our networ
 So we gonna see to create Vlan  and add security to it also note the concept of using in access mode and trunk mode
 ** What is access and Trunk mode ?? ** 
 Access mode in VLAN means the Vlan will only set up allow data to pass the end-device that is the reason while we talk about access mode while the Trunk mode is from one device of the network to another so from a switch to a Router on an internet device which is not a terminal device by terminal device i means a computer or a phone
-** In this exercise we will have 3 switch with a central switch connected to 2 other switch with end of those switch been linked to 2 Pc and the central switch with another Pc ** 
-** The network will have 2 VLANS which are VLAN5 and VLAN7 the rest in the lab screenshot **  
+*** In this exercise we will have 3 switch with a central switch connected to 2 other switch with end of those switch been linked to 2 Pc and the central switch with another Pc 
+ 
+**The network will have 2 VLANS which are VLAN5 and VLAN7 the rest in the lab screenshot ***  
+
+---
+# Lesson 3 : Router-on-sticks
+**This is a method that permit to connect togther many Vlans in differcent sub-networks together so that the can share data between them ***
+The principle of the Router on a stick is mainly from the concept of using a single Router to connect mainly Sub-networks where this sub-networks can be consider as Vlans 
+So for this lab we will add a single Router and 4 swithes which we will create 2 Vlans mainly VLAN 100 and VLAN 200 which will have differecnt subnet address that is 192.168.1.0 for Vlan 100 and 192.168.2.0 to VLAN 200 then attach some pcs to this switch and activate the trunk to allow pass the Vlans through the switches and access to the pcs.
+Note:The Trunks we are using are base the 802.1Q encapsulations***
+For the rest it will seen in the lab topology and also for this lab DHCP server will configurate for each VLANs
+This is type of Lab always make show that all the switches has a Vlan attach to it
+From this lab i mainly learn one thing always check weather the interface trunks are been correctly configurated like you want or you will always face errors when setting up DHCP and the packet will not have a route to travel in.
+The Command which mainly save me in this lab was the **show interface trunk** command 
+---
+# Lesson 4 :STP(Spanning Tree Protocol)
+When we are in a topology with equipement so switches,routers and pc the swicth mac table is empty that initially what happens but now the switch will start sending packets to all the devices connected to it that is what we called broadcasting and for each device the swicth  will register it mac-address that will make the switch to build it onw mac-address table  base on the devices found inside the network.
+For more representaion of the situation move on the spannin tree folder and view the files for explanations.
+**Note: The deviec send ARP(Address Resolution Protocol) packet to the swicth ** 
+
+If we have many devices this will become a reel mess up so that is the reason while the STP was created  So what is STP ??
+Spanning tree protocol "scans" the network to find all links,making sure the will no loop for switching and this is done by using the **STA(Spanning tree algorithms)**
+For that check more the stp pdf inside the Spanning tree folder.In other to all this to function properly all switches should coperate together passing by a point call the **Root Bridge** and the Root Bridge refers to the Root of our treeand so it the central point of linkage betweeen switches inside our network
+
+**Note we can 2 port mode mainly forwarding and blocking**
+A root port is an interface that has the cost from a swicth to reach the root switch so the root port can be the shorter and fastest link to reach the root switch.
+So STP is made to choose the faster path so if we have a far optics fiber cable,a media fastethernet cable and a far serial cable the **STA will choose the Far optic fiber since it is the fastest**
+When the is communication between this ports one port will be blocked and the other will choosen to be root port.
+
+
