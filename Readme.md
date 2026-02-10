@@ -84,7 +84,9 @@ For that check more the stp pdf inside the Spanning tree folder.In other to all 
 A root port is an interface that has the cost from a swicth to reach the root switch so the root port can be the shorter and fastest link to reach the root switch.
 So STP is made to choose the faster path so if we have a far optics fiber cable,a media fastethernet cable and a far serial cable the **STA will choose the Far optic fiber since it is the fastest**
 When the is communication between this ports one port will be blocked and the other will choosen to be root port.
-
-
-
-I like continous after
+**Note: STP was already running in background in our previous labs**
+**While should we configure STP manuaally ?**
+As an adminstrator we mainly do this configuration manually to make sure that the main Root switch is always the device with the highest packet translaction capacity in our network by default the root switch will always be expose to a high traffic due to the high number od **ATP** send by other devices on it So this roll can't be given to relatively old devices on the network so this will be mainly the functions of a recent and up-scale device.That is mainly a reason while STP is been set-up manaually.
+For STP configuration we need to pick a priority values of the ports inside our network so can have **Primary and Secondaty priority ports** the default value for priority is 32768 and most priority values are been set up to 4096 while the highest priority value is been up to 61440.Here wad the ways the STP works only in a single VLAN network but in some many cases we will have to used mutiple VLAN systems So in this cause we will configure stp on each Vlans in other to always have the fastest connection and packet transfer in the network.
+**STP is is sure an old today we can configure PVST(Rapid Spanning Tree protocol)** and aslo the used of portfast 
+Portfast is been applied only to access device like printers and Pcs but that is not somethings needed.
