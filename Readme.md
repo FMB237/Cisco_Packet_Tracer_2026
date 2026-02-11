@@ -90,3 +90,24 @@ As an adminstrator we mainly do this configuration manually to make sure that th
 For STP configuration we need to pick a priority values of the ports inside our network so can have **Primary and Secondaty priority ports** the default value for priority is 32768 and most priority values are been set up to 4096 while the highest priority value is been up to 61440.Here wad the ways the STP works only in a single VLAN network but in some many cases we will have to used mutiple VLAN systems So in this cause we will configure stp on each Vlans in other to always have the fastest connection and packet transfer in the network.
 **STP is is sure an old today we can configure PVST(Rapid Spanning Tree protocol)** and aslo the used of portfast 
 Portfast is been applied only to access device like printers and Pcs but that is not somethings needed.
+
+**Now let move on to our spanning tree protocol Lab** 
+This lab will have a topology with 6 swicthes,3 Vlans and 10 Pcs interconnnecting the network  so we gonna have VLAN10 with name HR(Human Resources),Vlan 20 (Finance) and Vlan30 (Legal) since we have many vlans we will configurate **PVST** on in our network so that we will get fastest path for our native package transfers.
+1. The first we will do is to draw the topology that is mainly seen into the spanning tree folder as the a screenshot image
+2. We will change the hostnames of all our swicthes for work.
+3. Then we will configure PVST protocol on all our swithes.
+4. Let configure Access interfaces VLANs and portfast
+**Note Portfast is only applied to devices which are not inside a loop that means mainly end devices like pcs and phones need it Let configure access from port fastethenet range from 1 to 8 for each switches so that we will able to scale our network with machines if needed**
+5. The interface form 1 to 8 belongs to VLAN10 from 9 to 16 to VLAN20 and from 17 to 22 to vlan30 and that for all switches
+6. Now all this configurations are mained let configure Trunks interfaces So all the Gigabit interface of all the 6 switches will be set up to trunk and also following my configurations we gonna set up all the fastethenrt 23 - 24 to trunkalso.
+7. After Configure Root Bridge swithes according to the Diagram for Vlan10 the main Root Bridge Switch is S1 for Vlan20 is S3 and Vlan30 with S5 for this configuaration we need to enter the following command into our switches.
+**Spanning-tree vlan 10 root primary
+To show the spanning tree process we used the command do show spanning-tree which will show us the actual priority on our spanning tree processes.**
+To get that max priority other the default value will be reduce to a root value pushing the priority to it max limit and the default priority for the **Root ID is 32778** In some cases the Bridge ID will be equal to the Root ID
+After appling this commands the priority value of our S1  Vlan 10 will reduce to 24586 with Make this Switch the main for managing VLAN10.
+Then so for S3 and S5 for Vlan20 and Vlan30 respectively.
+8. Let configurate the Ip addresses on Pcs inside manually in our topology and respecting the Vlans sub-networks
+9. Ensure all the 6 switches has all the Vms  if not create them manually
+10. Try to ping Pcs in the same Vlans if successful the lab is completed if not start checking for the errors in your configuarations and ensure all Trunk interfaces are configure
+Personally i Face some errors in my Vlans Packet commnicattion across the Network i will try to correct this errors later.
+  
