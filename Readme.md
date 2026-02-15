@@ -110,4 +110,14 @@ Then so for S3 and S5 for Vlan20 and Vlan30 respectively.
 9. Ensure all the 6 switches has all the Vms  if not create them manually
 10. Try to ping Pcs in the same Vlans if successful the lab is completed if not start checking for the errors in your configuarations and ensure all Trunk interfaces are configure
 Personally i Face some errors in my Vlans Packet commnicattion across the Network i will try to correct this errors later.
-  
+
+# Lesson 4.1: Adding VTP configuration to our lesson 4
+This lab is mainly a continuation of our previous to implement vtp into it since it will be too long to start again another lab. 
+Move on to switch S5 and start our vtp configurations by using the following commands
+1. "vtp mode server" note this command is been used of after the configure terminal
+2. vtp domain cyber 
+3. vtp password cyber
+But note i had alreasy added the vlans 
+4. Then move on to switch S1 and type the follwing commands **vtp mode client** after**vtp domain cyber** then **vtp pass cyber** This will automatically set up the name of our Vlans to all the machines which will be the client to the S5 switch so that we can easily intertified and browse through our network. This will be done on all of our switches which will be defined as clients.So the goal of this is to make all the switches to know the Vlans inside the network
+
+# Lesson 5: Router on a Stick 2 
