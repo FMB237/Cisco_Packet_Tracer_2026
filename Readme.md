@@ -123,6 +123,8 @@ Move on to switch S5 and start our vtp configurations by using the following com
 But note i had alreasy added the vlans 
 4. Then move on to switch S1 and type the follwing commands **vtp mode client** after**vtp domain cyber** then **vtp pass cyber** This will automatically set up the name of our Vlans to all the machines which will be the client to the S5 switch so that we can easily intertified and browse through our network. This will be done on all of our switches which will be defined as clients.So the goal of this is to make all the switches to know the Vlans inside the network
 
+---
+
 # Lesson 5: Router on a Stick 2 
 
 This lab will clearly be a review of my other Router on a Stick lab sinec in this i will used the  previous knowledge from the other lessons which are mainly  **VTP and STP(Spanning Tree protocol)**.For that let drive into the Router on a stick folder mainly the into lab2 from that folder is this were we gonna find good things.
@@ -139,4 +141,26 @@ This lab will clearly be a review of my other Router on a Stick lab sinec in thi
 10. Let set up hostname and PVST on all the swicthes
 11. Also change the hostanme of our router
 12. Using notepad we can type all the command we need to enter into our switches architecture so to avoid repetition we will need to enter the command into a simple bloc notes then copy then to each of of our swicthes.
-**Note: Port 1 to 8 will be located in VLAN700 for all the swithes while port 9 to 16 will be in VLAN800 and port 17-24 in VLAN900**
+**Note: Port 1 to 8 will be located in VLAN700 for all the swithes while port 9 to 16 will be in VLAN800 and port 17-23 in VLAN900**
+13. Set up port fa0/24 as Trunk and all the Gigabits of the switches in trunk also
+14. Configurate the Root switches accoring to the diagram 
+15. Set up Swithes7 as the VTP Server then all the others as clients.
+16. Using a Dhcp server we will then configure ip addresses on the pcs via the router server.
+17. When configurating the DHCP do not forget to excluded our 10 fisrt server addresses from the client machines.
+18. **Using the commands   ip dhcp excluded-address 10.7.0.0  10.7.0.10 or ip dhcp excluded-address 10.9.0.0 10.9.0.10** depending on the network we want to used.
+
+
+# Lesson 6 : STP Security
+From the previous lessons we learn that STP(Spanning Tree protocol) maintains the loop-free topologies in a redundant L2 network.
+**BPDU(Bridge Protocol Data Unit)** message are frames that switches distribute in between themselve.Swithes choose Root Bridge, Designated,and Root ports based on information from BPDUs.
+Let consider we have an attack in our network to destroy the network the attacker will only attack to the primary switches since the are the switches which mainly carries the principalment routes for package  transfers.
+
+But We can prevent this attack by using the stategy of the **BPDU guard** which is an addition to STP that was introduce to protect port to which end users connected. This is possible because BPDU messages are only exchange between swithes since if we observe a Pc BPDU will be wrong the there 
+To configure BPDU will do that after the spanning portfast it is very simple
+
+We have another method of protection call **Root guard** which will block the port we it realise the package comming is seen to have a greater priority than the current root while BPDU root the port.
+
+**Note  we can configurate Root primary and secondary**
+
+
+# 6.1 Exercise
