@@ -4,11 +4,14 @@
 Address:migeuelfouenanf@gmail.com | bfouenang237@gmail.com
 
 Okay to start this course is a beginner friendly course that will accesible to each and everyone which will like to learn modern network energinnering passing through cisco packer tracer
+
 ---
 # what is cisco packet tracer ??
 Cisco packet tracer can be define as the default network simulate software provides by Cisco for beginners to study and practice with their devices 
 For each person passing through network energineering cisco tracer is mainly the first software the uses.
+
 ---
+
 # But the exist more advance software for network simulations like GNS3 and ENE-NG which can mainly reproduce the behaviour  of modern routers and switch 
 But this course is mainly about cisco packet tracer so let start 
 Cisco packet tracer can be download from the official cisco website and we mainly need to cisco account for a mode proper use
@@ -88,7 +91,7 @@ When the is communication between this ports one port will be blocked and the ot
 **While should we configure STP manuaally ?**
 As an adminstrator we mainly do this configuration manually to make sure that the main Root switch is always the device with the highest packet translaction capacity in our network by default the root switch will always be expose to a high traffic due to the high number od **ATP** send by other devices on it So this roll can't be given to relatively old devices on the network so this will be mainly the functions of a recent and up-scale device.That is mainly a reason while STP is been set-up manaually.
 For STP configuration we need to pick a priority values of the ports inside our network so can have **Primary and Secondaty priority ports** the default value for priority is 32768 and most priority values are been set up to 4096 while the highest priority value is been up to 61440.Here wad the ways the STP works only in a single VLAN network but in some many cases we will have to used mutiple VLAN systems So in this cause we will configure stp on each Vlans in other to always have the fastest connection and packet transfer in the network.
-**STP is is sure an old today we can configure PVST(Rapid Spanning Tree protocol)** and aslo the used of portfast 
+**STP is is sure an old today we can configure PVST(Rapid Spanning Tree protocol)** and also the used of portfast 
 Portfast is been applied only to access device like printers and Pcs but that is not somethings needed.
 
 **Now let move on to our spanning tree protocol Lab** 
@@ -121,3 +124,19 @@ But note i had alreasy added the vlans
 4. Then move on to switch S1 and type the follwing commands **vtp mode client** after**vtp domain cyber** then **vtp pass cyber** This will automatically set up the name of our Vlans to all the machines which will be the client to the S5 switch so that we can easily intertified and browse through our network. This will be done on all of our switches which will be defined as clients.So the goal of this is to make all the switches to know the Vlans inside the network
 
 # Lesson 5: Router on a Stick 2 
+
+This lab will clearly be a review of my other Router on a Stick lab sinec in this i will used the  previous knowledge from the other lessons which are mainly  **VTP and STP(Spanning Tree protocol)**.For that let drive into the Router on a stick folder mainly the into lab2 from that folder is this were we gonna find good things.
+1. Let first redo the topology.
+2. Let start by adding 8 swithes from swicth1 to switch8
+3. Then in the middle of the topology add a router and link it to switch2,6 and 7 
+4. The swicth most be 2960 cisco switches
+5. Link all this switches togeher passing through their Gigaehernet ports using cross-over cables since the devices of the same type
+6. To the added router give it a link it fastethernet post with the fa/24 of the switch2,6 and 7 .
+**Note:For all this linkage we will need to add another adapter to the router for it to have 3 fastethernet post for linkage**
+7. The module name to add on switch 2960 is the **NE-1FE-TX** which will give us and additions fastethernet port.
+8. Add Pcs according to the topology of the lab
+9. Put our Pcs in various Vlans that we will create 3 vlans mainly Vlan 700,800 and 900 which will all carries pairs of informations about the pcs in them.
+10. Let set up hostname and PVST on all the swicthes
+11. Also change the hostanme of our router
+12. Using notepad we can type all the command we need to enter into our switches architecture so to avoid repetition we will need to enter the command into a simple bloc notes then copy then to each of of our swicthes.
+**Note: Port 1 to 8 will be located in VLAN700 for all the swithes while port 9 to 16 will be in VLAN800 and port 17-24 in VLAN900**

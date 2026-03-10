@@ -1,0 +1,29 @@
+interface range fastEthernet 0/1-8
+switchport mode access 
+switchport access vlan 700
+spanning-tree portfast 
+interface range fastEthernet 0/9-16
+switchport mode access
+switchport access vlan 800
+spanning-tree portfast 
+interface range fastEthernet 0/17-23
+switchport mode access 
+switchport access vlan 900
+spanning-tree portfast 
+do wr
+
+
+
+# Now let do the same for trunks interfaces
+
+interface range gigabitEthernet 0/1-2
+switchport mode trunk
+do wr
+
+# For the client we gonna used the commands 
+
+vtp mode client
+vtp domain cyber
+vtp password cyber
+do wr
+
