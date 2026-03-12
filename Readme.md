@@ -164,3 +164,20 @@ We have another method of protection call **Root guard** which will block the po
 
 
 # 6.1 Exercise
+Let move on the STP exercise
+Inside the STP_Security Folder you will find the lab for this lesson
+The lab topology is made up of 5 switches and 3pcs connected as end-devices to the swithces
+1. we need to reproduce the topology 
+2. connecting our upper swithes using the fa/23 and fa/24 in trunk with the other swithes.
+3. Then configure rapid PSVT on all our swithes.
+4. Now configure access port interface on the ports used for the connection with the pcs and the **BPDU Guard** this step will mainly be done a switch 3 to 5 do not forget to configurated the spanning-tree portfast
+5. Then Configure the Port trunk on all the swithes that is from sw1 ro sw5 so mainly includes port f0/23 ,f0/24  and G0/1 
+6. Let Now configurate the Root Bridges let select the SW1 to be the made root switch and lat used the default vlan1 for this operations
+7. Then configure root guard on interfacing connected to our access swithces so fa0/23 and fa0/24 so those 2 This is done by using the command **spanning-tree guard root**
+8. To test the used of the bpduguard we can add a new switch and try to connect to the switch3 through fa0/1 that port will be block.
+9. Then if we want to connect back the pc to switcth since the post is down we need to do a **shutdown first on the port to turn it off then a no shutdown**
+10. Now let test the group-guard config in our topology by using trying to configurate the sw3 as root with a lower priority.
+11. Used the command **Spanning-tree detail** to shwo the actual priority on sw3
+12. **spanning-tree vlan 1 priority 20480**
+13. on swicth1 we will find a warning message.
+14. **spanning-tree vlan 1 priority 32768**
