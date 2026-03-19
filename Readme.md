@@ -181,3 +181,75 @@ The lab topology is made up of 5 switches and 3pcs connected as end-devices to t
 12. **spanning-tree vlan 1 priority 20480**
 13. on swicth1 we will find a warning message.
 14. **spanning-tree vlan 1 priority 32768**
+
+# Lesson 7 : Vlans on Multilayer Swithes
+This lesson has the main aim to configurate mutiple vlan switch for it to acts as a gateway
+For this lab we mainly need to use the following devices : 
+- 2 3560 switches to be use as Core switches
+- 2 2960 switches to be used as distribution switches
+- 3 2960 switches as access switches
+- The creation of 2 vlans  mainly VLAN10 and VLAN20
+- Then some Pcs connected to the switches as end-devices. 
+- Configurate Vlan ports belonging that is from fa0/1-8 to  belongs to Vlans 10 and fa0/9-16 belongs to VLAN20
+
+Let now build to be the topology.
+**Note: Always used cross-cables for the same type of devices**
+
+
+**Now let move on to personal configs**
+1. Configurate the hostnames for the 2 3560 switches we gonna have MSL1 an MSL2.
+2. For the distribution swicthes we will have hostanme DIST1 and DIST2.
+3. Then the 3 access swithes will be name SW1,SW2 and SW3 respectively.
+4. Then configurate VLAN10 and VLAN20 on all the switches in the network 
+5. As we said one the VLAN10 will take fa0/1-8  and VLAN20 to fa0/9-16 and also configure the spanning-tree portfast on access devices
+6. The spanning-tree rapid-pvst should also be set up on the swicthes
+7. Also configurate trunk ports for 2960.
+8. So the access switches have 2 VLANS and bdpuguard-enable with spanning-tree portfast
+9. On  DIST swithces only have interface trunks configurate so no vlans on them 
+10. Same for MSL1 and MSL2 which has no set up configs on it 
+11. When i look at pc address i see a static address of 192.168.10.2 with gateway 192.168.10.1 
+**So where all the configs i found in her file.Then let me do it for me file**
+
+
+**Now that all the basic services from the setup file are done let move on to the config of the main lab**
+1. Let configure the trunk interface on multilayers swithces
+2. The main differcent between the Mutlilayers swicthes and the main switches is that we need to specified the encapsulation on them when doing trunk configurations
+Like **switchport trunk encapsulation dot1q** then do a **switchport mode trunk**  Do this on all the Gigabit ethernet infact all the trunk interfaces.
+3. Okay then let configurate the vtp  server on MLS1 and all the other will be client and then create our Vlans on MSL1 with names BLUE and ORANGE like in the lab
+So we will have the following commands
+<b>vtp mode server
+vtp domain FMB237
+vtp password Th@9Sand2</b>
+
+**Then name Vlans on MLS1**
+
+For client we will have 
+<b>vtp mode client
+vtp domain FMB237
+vtp password Th@9Sand2</b>
+
+Check the vlan corrections and configs with the command **do sh vlan** in the global config mode
+
+4. Configure root bridge for both VLANS on MLS1 the command is pretty simple that is
+**spanning-tree vlan 10 root primary**
+5. Now let configure root guard on MSL1 interfaces facing DIST swithes. commands are 
+**spanning-tree guard root** on post G0/2 and f0/24
+
+6. The last is to configurate MLS1 as gateways.Here we will simplie create the vlan interface and address it.
+like **interface vlan 10** with **ip address 192.168.10.1 255.255.255.0** for VLAN10
+and **interface vlan 20** with **ip address 192.168.20.1 255.255.255.0** for VLAN20
+
+Then simple enable ip routing in our lab
+that **ip routing** so now we have gateways configurated.
+
+Then finally configurate dhcp server for VLAN10 and VLAN20 on MLS1
+ip dhcp excluded-address 192.168.10.1 192.168.10.10
+ip dhcp pool VLAN10
+network 192.168.10.0 255.255.255.0
+default-router 192.168.10.1 **FOR VLAN10**
+
+
+ip dhcp excluded-address 192.168.20.1 192.168.20.10
+ip dhcp pool VLAN20
+network 192.168.20.0 255.255.255.0
+default-router 192.168.20.1 **FOR VLAN20**
