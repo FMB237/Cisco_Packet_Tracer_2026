@@ -253,3 +253,90 @@ ip dhcp excluded-address 192.168.20.1 192.168.20.10
 ip dhcp pool VLAN20
 network 192.168.20.0 255.255.255.0
 default-router 192.168.20.1 **FOR VLAN20**
+
+
+---
+
+
+# Lesson 8 : VLANS on Multilayer swicthes(II)
+This is a second lab  exercise on the used of Multilayers switches on cisco packet tracer
+for this lab we gonna used 2 MLS for our topology 
+4 simple 2960 switches with 2 conneted to any MLS
+Then the 2960 links to the end devices which are the pcs.
+In this lab we mainly have 4 networks each represented by a VLAN so we will go from VLAN10 to VLAN40
+So from network 192.168.10.0 -> 192.168.40.0 respectively from VLAN10 to VLAN40 .
+So we have 4 vlans which will be denicated to each ports 
+**Like Vlan10 will take from fa0/1-6 Vlan20 will range from fa0/7-12,VLAN30 in the range fa0/13-18, and Vlan40 in the range fa0/19-23**
+For more details go to the lab.
+
+To use an MLS as a multilayer switch we need to configurate  a gateway as we did in the previous lessons.
+That is done by giving address to our VLANs and using the command **ip routing** to permit intervlan routing.
+All this will be done using our MLS1 then for the communication between how to networks we gonna created simple statics routes.
+So we gonna do static routes like with routers. So the Route will be configured on MLS1 and MLS2.
+
+
+**Let start our configs**
+1. configure a banner on MSL1 the banner message can be #FMB237#
+2. Then rename all our devices 
+3. Then configure all the access linked on the 2960 swicthes.
+
+
+
+interface range fastEthernet 0/1-6
+switchport mode access 
+switchport access vlan 10
+interface range fastEthernet 0/7-22
+switchport mode access 
+switchport access vlan 20
+interface range fastEthernet 0/13-18
+switchport mode access 
+switchport access vlan 30
+interface range fastEthernet 0/19-23
+switchport mode access 
+switchport access vlan 40
+interface range fastEthernet 0/1-23
+spanning-tree portfast
+do wr
+
+4. let configure trunk interfaces on our 2960 swithces which are mainly Gigabit interface or fa0/24 port 
+5. Repear step with MLS1 and MLS2 for trunk configs on them .
+6. Now let create missing VLANS on each vlans
+7. Let used ip routing on our 2 MLS's swicthes 
+8. Then let assigned ip address to our VLANs we will have VLAN10 with ip 192.168.10.1/24 and VLAN20 with 192.168.20.1./24 for VLAN20 for MLS1
+9. VLAN30 192.168.30.1./24 and VLAN40 192.168.40.1./24
+10. Let create a static link between the MLS1 and MLS2.
+11. Since from on my  topology MLS1 and MLS2 are linked with G0/1 using the command **no swicthport** then add an ip address with the command 
+**ip addr 192.168.100.1 255.255.255.0** for MLS1    then do same for MLS2 with now ip addr with **192.168.100.2 255.255.255.0**
+12. Let configure DHCP for VLAN10  and VLAN20 on MSL1 and VLAN30 and VLAN40 DHCP on MLS2.
+13. let configure the ip route for the network jumps.
+14. **like ip route 192.168.30.0 255.255.255.0 192.168.100.2 on MLS1 and also 192.168.40.0  255.255.255.0 192.168.100.2**
+15. **ip route 192.168.10.0 255.255.255.0  192.168.100.1 on MLS2 and also **192.168.20.0 255.255.255.0 192.168.100.1**
+
+# Lesson 9 : EtherChannel 
+**What is Etherchannel ?**,Etherchannel is the method a taking many link and aggegate them to into a single physical link
+mainly used for the to backup links with the used of Etherchannel the aggregation of mainly linkes into  single 
+
+These are some rules used in etherchannels:
+- We can only aggregate up to 8 ports for the etherchannel link  that is the max.
+- all the port most have the same switchport  like only trunk mode or access modes
+- There ports should only be Ethernet,Fastethernet or Gigabitethernet but it should be a mixture.
+
+Let move up to the lab : 
+1. for this lab we need 2 MLS like MLS1 and MLS2 
+2. Each conneted to a single 2960 swithces.
+3. 2 laptop each connected to an MLS 
+4. then 2 pcs connected to their 2960 switches.
+5. Now let connnect our devices.
+6. Let Now do some configurations.
+
+**Since we have only one VLAN whihc is VLAN1** we gonna set up it up  as root VLAN and that should be done on MLS1
+- So we gonna have used the command **spanning-tree vlan 1 root primary**
+- Then now select the port we aggeregate that is from **fa0/1-4** then group them into a single link 
+- use the command **channel-group  ?** to view the numeber of channel groups we can have we gonna see a group ranging from 1 to 48 so we can have 48 channel-groups on our devices.
+- Then just name a group link channel-group 1 mode ? then we shall select a mode from all those existing.
+- Since we are using cisco we gonna used the PAgp for that we used the  command 
+- **channel-group 1 mode desirable to force PAgp**
+- Then configure our trunk interfaces.
+- Then go back and used the command **int port-channel 1** then used the sw tr encap dot1 and then sw mo tr.
+- Repeats this for MLS2
+- 
